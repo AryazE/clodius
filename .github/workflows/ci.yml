@@ -39,6 +39,8 @@ jobs:
     
     - name: Instrument code
       uses: AryazE/auto-dylin/instrument@main
+      with:
+        analysis-coverage: false
 
     - name: Run Unit Tests
       run: pytest
