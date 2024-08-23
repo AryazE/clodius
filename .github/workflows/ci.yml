@@ -36,6 +36,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -e .[dev]
+    
+    - name: Instrument code
+      uses: AryazE/auto-dylin/instrument@main
 
     - name: Run Unit Tests
       run: pytest
+    
+    - name: Report results
+      if: always()
+      uses: AryazE/auto-dylin/report@main
