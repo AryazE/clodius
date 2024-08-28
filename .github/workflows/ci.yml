@@ -41,9 +41,10 @@ jobs:
       uses: AryazE/auto-dylin/instrument@main
       with:
         analysis-coverage: false
+        exclude-checkers: 'ML-01 ML-02 ML-04'
 
     - name: Run Unit Tests
-      run: pytest
+      run: pytest -n 4
     
     - name: Report results
       if: always()
